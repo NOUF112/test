@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"> <!-- displays site properly based on user's device -->
+
+  <link rel="icon" type="image/png" sizes="32x32" href="./assets/images/favicon-32x32.png">
+  <link rel="Poppins" type="URL" href="https://fonts.google.com/specimen/Poppins">
+  
+  <title>Age calculator app</title>
+
+  <!-- Feel free to remove these styles or customise in your own stylesheet 👍 -->
+  <style>
+   @font-face{
+    font-family: "Pop";
+    src:"https://github.com/itfoundry/Poppins";
+   }
+   body{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-family: "Pop";
+    border-top: 70px;
+   }
+    .wrapInput {
+      display:block;
+    }
+
+    input{
+      font-style: italic;
+      font-weight: 800;
+      font-size: 25px;
+      border-color: darkgray;
+      border-radius: 20px;
+      border: 20mm;
+    }
+
+    input:hover{
+      border-color: blueviolet;
+    }
+  .result{
+      font-style: italic;
+    }
+    .submit-btn{
+      justify-content: center;
+    align-items: center;
+    background-color: blueviolet;
+    border-radius: 50%;
+    border: none;
+    }
+
+  </style>
+</head>
+<body>
+<div calss="date-input">
+    <div class="wrapInput">
+  <label for="day">DAY </label><br>
+  <input id="day" type="number" min="1" max="31">
+</div>
+<div class="wrapInput">
+  <label for="month"> MONTH </label><br>
+  <input id="month" type="number" min="1" max="12">
+</div>
+<div class="wrapInput">
+  <label for="year"> YEAR </label> <br>
+  <input id="year" type="number" >
+</div>
+<br><br>
+<button  class="submit-btn" type="submit" onclick="calculateYears()">
+  <svg xmlns="http://www.w3.org/2000/svg" width="46" height="44" viewBox="0 0 46 44"><g fill="none" stroke="#FFF" stroke-width="2"><path d="M1 22.019C8.333 21.686 23 25.616 23 44M23 44V0M45 22.019C37.667 21.686 23 25.616 23 44"/></g></svg>
+</button>
+</div><br>
+
+<div class="result">
+<h1 id="years" >-- years</h1>
+<h1 id="months">-- months</h1>
+<h1 id="days">-- days</h1>
+</div>
+
+
+</body>
+</html>
+
+<script>
+  
+
+  function calculateYears(){
+    var y=document.getElementById("year");
+    document.getElementById("years").innerHTML= y.value +" years";
+    calculateMonths();
+    calculateDays();
+  }
+
+  function calculateMonths(){
+    var m=document.getElementById("month");
+    document.getElementById("months").innerHTML=m.value+" months";
+  }
+
+  function calculateDays(){
+    var d=document.getElementById("day");
+    document.getElementById("days").innerHTML=d.value+" days";
+  }
+</script>
